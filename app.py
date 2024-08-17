@@ -63,10 +63,14 @@ def run_gemini(message):
              """}
         ]
         chat = model.start_chat(history=session["context"])
-    response = chat.send_message(message)
-    print("message:", message)
-    print("response:", response.text)
-    return response.text
+    try:    
+        response = chat.send_message(message)
+        print("message:", message)
+        print("response:", response.text)
+        return response.text
+    except Exception as e:
+        print(e)
+        return "Sorry, I'm having trouble with your request. Please try again later."
 
 def extract_text_from_pdf(pdf_file_path):
 	doc = fitz.open(pdf_file_path)
