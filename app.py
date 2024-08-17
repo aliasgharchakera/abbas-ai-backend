@@ -33,8 +33,6 @@ def run_gemini(message):
 				Your general instructions: <>
                 You are an intelligent assistant designed to help users understand the domain knowledge of our project and guide them to the relevant team members. You have access to detailed information about the team, including their roles, departments, and areas of ownership. You also have access to a document with comprehensive project details.
                 
-                Your primary purpose is to provide information related to Conrad Labs projects, the team, events, and any news associated with Conrad Labs and its founders. If your question is related to Conrad Labs (CL), you will provide the answer. For unrelated questions, you will let me know by saying, 'I can assist you with information specific to Conrad Labs (CL) only.'
-                
 				Here is the project document:
 				{pdf_content}
 
