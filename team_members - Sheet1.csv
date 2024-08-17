@@ -1,36 +1,36 @@
-Team Members,Data Engineering,AI/ML,Infrastructure,Quality Assurance Team,Project Management Team,Engineering,OwnerShip Area,Role
-Ammar Khan,Yes,,,,,,Utilities and external communication,"Lead, VP of Engineering"
-Farooq Aziz,,Yes,,,,,Templating for end-user interaction and marketing leads generation,Lead
-Ashna Rahman,,,Yes,,,,Infrastructure,Lead
-Hammad Ali,,,,Yes,,,Quality Assurance,Lead
-Marium Ahmed,,,,,Yes,,Attendance and disbursement,Lead
-Waqas Qureshi,,,,,,Yes,Accounting / Finance,Level 2 Engineer
-Owais Khan,,,Yes,,,,Infrastructure,Level 2 Engineer
-Zeeshan Shah,Yes,,,,,,Templating for end-user interaction and marketing leads generation,Level 2 Engineer
-Bilal Haider,,Yes,,,,,Attendance and disbursement,Level 4 Engineer
-Sana Malik,,,Yes,,,,Infrastructure,Level 1 Engineer
-Ayesha Siddiqi,,,,Yes,,,Quality Assurance,Level 6 Engineer
-Asad Qureshi,,,,,Yes,,Accounting / Finance,Level 1 Engineer
-Taimoor Khan,,,,,,Yes,Attendance and disbursement,Level 6 Engineer
-Zara Fatima,,,,,,Yes,Utilities and external communication,Level 2 Engineer
-John Smith,Yes,,,,,,Utilities and external communication,Level 2 Engineer
-Ahmed Raza,,Yes,,,,,Templating for end-user interaction and marketing leads generation,Level 2 Engineer
-Usman Javed,,,Yes,,,,Infrastructure,Level 4 Engineer
-Sara Khan,,,,Yes,,,Quality Assurance,Level 2 Engineer
-Ali Mirza,,,,,Yes,,Attendance and disbursement,Level 2 Engineer
-Imran Bashir,,,,,,Yes,Accounting / Finance,Level 2 Engineer
-Naveed Khan,,,,,,Yes,Utilities and external communication,Level 2 Engineer
-Emily Brown,,Yes,,,,,Templating for end-user interaction and marketing leads generation,Level 2 Engineer
-Nida Javed,,,Yes,,,,Infrastructure,Level 3 Engineer
-Hassan Shah,,,,Yes,,,Quality Assurance,Level 3 Engineer
-Maria Qureshi,,,,,Yes,,Attendance and disbursement,Level 3 Engineer
-Tariq Aziz,,,,,,Yes,Accounting / Finance,Level 3Engineer
-Zara Khan,,,,,,Yes,Utilities and external communication,Manager
-Michael Johnson,,Yes,,,,,Templating for end-user interaction and marketing leads generation,Level 2 Engineer
-Ali Khan,,,Yes,,,,Infrastructure,Level 4 Engineer
-Nadia Malik,,,,Yes,,,Quality Assurance,Level 2 Engineer
-Farhan Haider,,,,,Yes,,Attendance and disbursement,Level 2 Engineer
-Sarah Davis,,,,,,Yes,Accounting / Finance,Manager
-Usman Ghani,,,,,,Yes,Utilities and external communication,Level 2 Engineer
-Adnan Shah,,,,,,Yes,Templating for end-user interaction and marketing leads generation,Lead
-David Wilson,,,,,,Yes,Accounting / Finance,Level 2 Engineer
+Team Members,Department,OwnerShip Area,Role
+Ammar Khan,Data Engineering,Utilities and external communication,"Lead, VP of Engineering"
+Farooq Aziz,AI/ML,Templating for end-user interaction and marketing leads generation,Lead
+Ashna Rahman,Infrastructure,Infrastructure,Lead
+Hammad Ali,Quality Assurance Team,Quality Assurance,Lead
+Marium Ahmed,Project Management Team,Attendance and disbursement,Lead
+Waqas Qureshi,Engineering,Accounting / Finance,Level 2 Engineer
+Owais Khan,Infrastructure,Infrastructure,Level 2 Engineer
+Zeeshan Shah,Data Engineering,Templating for end-user interaction and marketing leads generation,Level 2 Engineer
+Bilal Haider,AI/ML,Attendance and disbursement,Level 4 Engineer
+Sana Malik,Infrastructure,Infrastructure,Level 1 Engineer
+Ayesha Siddiqi,Quality Assurance Team,Quality Assurance,Level 6 Engineer
+Asad Qureshi,Project Management Team,Accounting / Finance,Level 1 Engineer
+Taimoor Khan,Engineering,Attendance and disbursement,Level 6 Engineer
+Zara Fatima,Engineering,Utilities and external communication,Level 2 Engineer
+John Smith,Engineering,Utilities and external communication,Level 2 Engineer
+Ahmed Raza,AI/ML,Templating for end-user interaction and marketing leads generation,Level 2 Engineer
+Usman Javed,Infrastructure,Infrastructure,Level 4 Engineer
+Sara Khan,Quality Assurance Team,Quality Assurance,Level 2 Engineer
+Ali Mirza,Project Management Team,Attendance and disbursement,Level 2 Engineer
+Imran Bashir,Engineering,Accounting / Finance,Level 2 Engineer
+Naveed Khan,Engineering,Utilities and external communication,Level 2 Engineer
+Emily Brown,Infrastructure,Templating for end-user interaction and marketing leads generation,Level 2 Engineer
+Nida Javed,Quality Assurance Team,Infrastructure,Level 3 Engineer
+Hassan Shah,AI/ML,Quality Assurance,Level 3 Engineer
+Umer bhai,Project Management Team,Attendance and disbursement,Level 3 Engineer
+Tariq Aziz,Engineering,Accounting / Finance,Level 3Engineer
+Zara Khan,Engineering,Utilities and external communication,Manager
+Michael Johnson,AI/ML,Templating for end-user interaction and marketing leads generation,Level 2 Engineer
+Ali Khan,Infrastructure,Infrastructure,Level 4 Engineer
+Nadia Malik,Quality Assurance Team,Quality Assurance,Level 2 Engineer
+Farhan Haider,Engineering,Attendance and disbursement,Level 2 Engineer
+Sarah Davis,Engineering,Accounting / Finance,Manager
+Usman Ghani,Engineering,Utilities and external communication,Level 2 Engineer
+Adnan Shah,Engineering,Templating for end-user interaction and marketing leads generation,Lead
+David Wilson,Engineering,Accounting / Finance,Level 2 Engineer

@@ -29,18 +29,33 @@ def run_gemini(message):
     if not chat:
         session["context"] = [
             {"role": "user", "parts": f"""
-                You are a helpful assistant that is assisting a new employee get on boarded with the company.
-                You are expected to provide the new employee with the necessary information to get on boarded with their project.
-                This includes the information regarding the project
-                {pdf_content}
-                Here is the information regarding the project members and their roles, the "ye
-                {csv_content}
+				Your general instructions: <>
+                You are an intelligent assistant designed to help users understand the domain knowledge of our project and guide them to the relevant team members. You have access to detailed information about the team, including their roles, departments, and areas of ownership. You also have access to a document with comprehensive project details.
+				Here is the project document:
+				{pdf_content}
+
+				Here is the csv containing the information regarding the project members and their roles
+				{csv_content}
+
+				When users ask questions or need assistance, your role is to:
+
+				Provide Relevant Domain Information: Offer concise and accurate explanations or information based on the project details.
+
+				Guide to Relevant Team Members: Identify the appropriate team member(s) based on the query and direct the user to them, considering their department, role, and ownership area.
+
+				If a user inquires about a specific area (e.g., "Who handles Infrastructure?" or "Who can I talk to about Utilities?"), you should refer them to the correct person or provide a brief explanation from the project document if needed.
+
+				Always be clear, concise, and user-friendly in your responses.
+				
+				If you are unsure about the answer, you can ask the user to clarify their question or provide additional context.
+    
+				<>
+             """},
+            {"role": "model", "parts": f"""
+                Ok, I understand. Let's get started!
              """}
         ]
         chat = model.start_chat(history=session["context"])
-    if chat:
-        print("Chat is active")
-        print(chat.history)
     response = chat.send_message(message)
     return response.text
 
@@ -89,4 +104,4 @@ def chatbot():
     return jsonify({"response": response_text})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=os.environ.get("DEBUG", False))
