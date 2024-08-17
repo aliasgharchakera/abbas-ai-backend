@@ -21,21 +21,28 @@ Session(app)
 
 pdf_content = None
 csv_content = None
+personal_info = None
 chat = None
 
 def run_gemini(message):
-    global chat
+    global chat, pdf_content, csv_content, personal_info
     model = genai.GenerativeModel("gemini-pro")  # Replace with your desired Gemini model
     if not chat:
         session["context"] = [
             {"role": "user", "parts": f"""
 				Your general instructions: <>
                 You are an intelligent assistant designed to help users understand the domain knowledge of our project and guide them to the relevant team members. You have access to detailed information about the team, including their roles, departments, and areas of ownership. You also have access to a document with comprehensive project details.
+                
+                Your primary purpose is to provide information related to Conrad Labs projects, the team, events, and any news associated with Conrad Labs and its founders. If your question is related to Conrad Labs (CL), you will provide the answer. For unrelated questions, you will let me know by saying, 'I can assist you with information specific to Conrad Labs (CL) only.'
+                
 				Here is the project document:
 				{pdf_content}
 
 				Here is the csv containing the information regarding the project members and their roles
 				{csv_content}
+    
+                Here is the csv containing personal information of the team members such age, hobby, hidden talent and their fantasy adventures
+                {personal_info}
 
 				When users ask questions or need assistance, your role is to:
 
@@ -57,6 +64,8 @@ def run_gemini(message):
         ]
         chat = model.start_chat(history=session["context"])
     response = chat.send_message(message)
+    print("message:", message)
+    print("response:", response.text)
     return response.text
 
 def extract_text_from_pdf(pdf_file_path):
@@ -74,8 +83,10 @@ with app.app_context():
     # Load the PDF content once when the app starts
     pdf_file_path = "Case-study-of-ERP-implementation.pdf"
     csv_file_path = "team_members - Sheet1.csv"
+    personal_info_file_path = "team_member_details - Sheet1.csv"
     pdf_content = extract_text_from_pdf(pdf_file_path)
     csv_content = extract_text_from_csv(csv_file_path)
+    personal_info = extract_text_from_csv(personal_info_file_path)
     
 @app.route('/', methods=['GET'])
 def index():
