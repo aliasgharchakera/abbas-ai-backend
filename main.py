@@ -1,12 +1,19 @@
+import os
+import fitz
 import google.generativeai as genai
 from dotenv import load_dotenv
-import fitz
+from flask import Flask, request, jsonify
 
 load_dotenv()
 
+# Initialize the Flask application
+app = Flask(__name__)
+
+# Configure the Gemini model
+genai.configure()
+
 def run_gemini(prompt):
-    genai.configure()
-    model = genai.GenerativeModel("gemini-pro")  # Replace with desired model
+    model = genai.GenerativeModel("gemini-pro")  # Replace with your desired Gemini model
     response = model.generate_content(prompt)
     return response.text
 
@@ -16,12 +23,24 @@ def extract_text_from_pdf(pdf_file_path):
         text = "".join(page.get_text() for page in doc)
         return text
 
-def send_pdf_to_gemini(pdf_file_path):
+@app.route('/chatbot', methods=['POST'])
+def chatbot():
+    data = request.json
+    pdf_file_path = data.get("pdf_file_path")
+    
+    if not pdf_file_path or not os.path.exists(pdf_file_path):
+        return jsonify({"error": "Invalid PDF file path"}), 400
+    
     text = extract_text_from_pdf(pdf_file_path)
-    prompt = f"Summarize the following text: {text}"
-    return run_gemini(prompt)
+    prompt = f"Use the following information to respond: {text}"
+    
+    user_message = data.get("message")
+    if user_message:
+        prompt += f"\n\nUser: {user_message}"
+    
+    response = run_gemini(prompt)
+    
+    return jsonify({"response": response})
 
 if __name__ == "__main__":
-    pdf_file_path = "Case-study-of-ERP-implementation.pdf"  # Replace with your PDF file path
-    response = send_pdf_to_gemini(pdf_file_path)
-    print(response)
+    app.run()
