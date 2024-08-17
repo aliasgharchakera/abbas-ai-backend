@@ -76,6 +76,10 @@ with app.app_context():
     csv_file_path = "team_members - Sheet1.csv"
     pdf_content = extract_text_from_pdf(pdf_file_path)
     csv_content = extract_text_from_csv(csv_file_path)
+    
+@app.route('/', methods=['GET'])
+def index():
+    return {"message": "Welcome to the Abbas AI Chatbot!"}
 
 @app.route('/chatbot', methods=['POST'])
 def chatbot():
