@@ -28,7 +28,14 @@ def run_gemini(message):
     model = genai.GenerativeModel("gemini-pro")  # Replace with your desired Gemini model
     if not chat:
         session["context"] = [
-            {"role": "user", "parts": f"Use the following information to respond: {pdf_content} {csv_content}"}
+            {"role": "user", "parts": f"""
+                You are a helpful assistant that is assisting a new employee get on boarded with the company.
+                You are expected to provide the new employee with the necessary information to get on boarded with their project.
+                This includes the information regarding the project
+                {pdf_content}
+                Here is the information regarding the project members and their roles, the "ye
+                {csv_content}
+             """}
         ]
         chat = model.start_chat(history=session["context"])
     if chat:
